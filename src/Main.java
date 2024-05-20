@@ -20,42 +20,49 @@ public class Main {
 //        validator.isString(new User());
 //
 //        validator.isStrongPassword("Trunk123!");
-        User [] blackListUsers = {null,null,null};
-        blackListUsers [1] = new User(11, "BlackUser","1233",new Date(),'m', "ion@gmail.com");
+//        User [] blackListUsers = {null,null,null};
+//        blackListUsers [1] = new User(11, "BlackUser","1233",new Date(),'m', "ion@gmail.com");
+//
+//
+//
+//
+//        User user1 = new User(12, "Ion","1233",new Date(),'m', "ion@gmail.com");
+//        authService.signUp(user1);
+//        User user2 = user1;
+//
+//        authService.setUsers(blackListUsers);
+//
+//        user2.setUsername("User2");
+//        authService.getUsers()[1].setUsername("Marry");
+////        authService.getUsers()[1]= null;
+//
+//        //Cache for
+//        User [] users = authService.getUsers();
+//        System.out.println(users);
+//        for(int i =0; i< users.length; i++ ){
+//            System.out.println(authService.getUsers()[i]);
 
+        //  }
+//            MessagingService messagingService = new MessagingService(3);
+//
+//        messagingService.send(new Message(1, "Hello Bob", new Date()));
+//        messagingService.send(new Message(2, "Hello Eveline", new Date()));
+//        messagingService.send(new Message(3, "Hello everyone", new Date()));
+//     //  messagingService.send(new Message(4, "Hello everyone", new Date()));
+//
+//        System.out.println("\n All messages:");
+//        messagingService.printMessages();
+//
 
 
         AuthService authService = new AuthService();
-
-        User user1 = new User(12, "Ion","1233",new Date(),'m', "ion@gmail.com");
-        authService.signUp(user1);
-        User user2 = user1;
-
-        authService.setUsers(blackListUsers);
-
-        user2.setUsername("User2");
-        authService.getUsers()[1].setUsername("Marry");
-//        authService.getUsers()[1]= null;
-
-        //Cache for
-        User [] users = authService.getUsers();
-        System.out.println(users);
-        for(int i =0; i< users.length; i++ ){
-            System.out.println(authService.getUsers()[i]);
+        int userCount=0;
+        while (userCount < 10){
+            User u = new User(12, "Marcel","2222",new Date(),'m', "Marcel@gmail.com");
+            authService.signUp(u);
+            userCount++;
 
         }
-        MessagingService messagingService = new MessagingService(3);
-
-        //Message [] messages = messagingService.
-        messagingService.send(new Message(1, "Hello Bob", new Date()));
-       messagingService.send(new Message(2, "", new Date()));
-       messagingService.send(new Message(3, "Hello everyone", new Date()));
-     //  messagingService.send(new Message(4, "Hello everyone", new Date()));
-
-        System.out.println("\n All messages:");
-        messagingService.printMessages();
-
-
 
     }
 }

@@ -17,8 +17,18 @@ public class AuthService {
         users = new User[5]; //inizializam un array cu 5 celule
     }
      public void signUp(User user) {
-        users[0] = user;
-        users[1] = user;
+         int i;
+         try {
+            // 1. search for next avaibalble
+            for (i = 0; i < users.length; i++) {
+                if (users[i]==null) break;
+            }
+             // 2. insert the user
+             users[i] = user;
+
+         }catch (ArrayIndexOutOfBoundsException e){
+             e.printStackTrace();
+         }
      }
     public void signIn() {}
     public void signOut() {}
