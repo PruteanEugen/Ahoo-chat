@@ -13,9 +13,12 @@ public class User extends Entity{
         this.username = username;
     }
 
+    public String getUsername() {
+        return username;
+    }
     public User (){}
-//    System.out.println("Constructing");
 
+//    System.out.println("Constructing");
 //public User (String username, String password, Date dob, char gander, String email) {
 //   // System.out.println("Constructing with username");
 //    this.username = username;
@@ -24,6 +27,7 @@ public class User extends Entity{
 //    this.gander = gander;
 //    this.email = email;
 //}
+
 public User(int id, String username, String password, Date dob, char gander, String email) {
         super(id);
         this.username = username;
