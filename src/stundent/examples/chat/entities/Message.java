@@ -1,9 +1,9 @@
 package stundent.examples.chat.entities;
 
 import java.util.Date;
+import java.util.UUID;
 
-public class Message {
-    private int id;
+public class Message extends Entity {
     private String body;
     // private User sender;
     // private User receiver;
@@ -14,16 +14,14 @@ public class Message {
     public Message(){}
 
 
-    public Message(int id, String body, Date sentAt) {
-        setId(this.id);
+    public Message(UUID id, String body, Date sentAt) {
+        super(id);
         this.body = body;
         this.sentAt =sentAt;
 
     }
 
-    public int getId(){
-        return id;
-    }
+
 
     public String getBody(){
         return body;
@@ -38,13 +36,7 @@ public class Message {
         return seenAt;
     }
 
-    public void setId(int id) {
-        if (id <= 1  ||  id >= 1000000) {
-            this.id = id;
-        }else {
-            System.out.println(" The id is out of range ");
-        }
-        }
+
 
     public void setBody(String body){
         if (body.isEmpty()) {
@@ -65,8 +57,7 @@ public class Message {
 
     @Override
     public String toString() {
-        return "Message{" +
-                "id=" + id +
+        return "Message{"+
                 ", body='" + body + '\'' +
                 ", sentAt=" + sentAt +
                 ", receivedAt=" + receivedAt +

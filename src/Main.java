@@ -1,4 +1,5 @@
 import student.examples.chat.services.AuthService;
+import student.examples.chat.services.IndentificationService;
 import student.examples.chat.services.MessagingService;
 import stundent.examples.chat.entities.Message;
 import stundent.examples.chat.entities.User;
@@ -55,35 +56,37 @@ public class Main {
 //
 
 
-        AuthService authService = new AuthService();
-        int userCount=1;
-        while (userCount < 4){
-            User u1 = new User(11, "Marcel"+userCount,"2222",new Date(),'m', "Marcel@gmail.com");
-            authService.signUp(u1);
-            userCount++;
+//        AuthService authService = new AuthService();
+//        int userCount=1;
+//        while (userCount < 4){
+          //  User u1 = new User(11, "Marcel"+userCount,"2222",new Date(),'m', "Marcel@gmail.com");
+//            authService.signUp(u1);
+//            userCount++;
 
-        }
-        User u5 = new User(12, "Marcel","2222",new Date(),'m', "Marcel@gmail.com");
-        System.out.println(authService.searchUser(u5));
-        System.out.println("Search the user");
-        for (int i = 0; i < authService.getUsers().length; i++) {
-            System.out.println(authService.getUsers()[i]);
-        }
-        authService.deleteUser(3);
-        System.out.println("Delete user");
-        for (int i = 0; i < authService.getUsers().length; i++) {
-            System.out.println(authService.getUsers()[i]);
-        }
-        authService.shiftUsersLeft(3);
-        System.out.println("Users shift left");
-        for (int i = 0; i < authService.getUsers().length; i++) {
-            System.out.println(authService.getUsers()[i]);
-        }
-        System.out.println("Delete with drpOut Marcel");
-        authService.dropOut(new User(5, "Marcel5", "2222", new Date(), 'm', "Marcel@e.h"));
-        for (int i = 0; i < authService.getUsers().length; i++) {
-            System.out.println(authService.getUsers()[i]);
-        }
+       // }
+        // ########################HOMEWORK#######################################
+//        User u5 = new User(12, "Marcel","2222",new Date(),'m', "Marcel@gmail.com");
+//        System.out.println(authService.searchUser(u5));
+//        System.out.println("Search the user");
+//        for (int i = 0; i < authService.getUsers().length; i++) {
+//            System.out.println(authService.getUsers()[i]);
+//        }
+//        authService.deleteUser(3);
+//        System.out.println("Delete user");
+//        for (int i = 0; i < authService.getUsers().length; i++) {
+//            System.out.println(authService.getUsers()[i]);
+//        }
+//        authService.shiftUsersLeft(3);
+//        System.out.println("Users shift left");
+//        for (int i = 0; i < authService.getUsers().length; i++) {
+//            System.out.println(authService.getUsers()[i]);
+//        }
+//        System.out.println("Delete with drpOut Marcel");
+//        authService.dropOut(new User(5, "Marcel5", "2222", new Date(), 'm', "Marcel@e.h"));
+//        for (int i = 0; i < authService.getUsers().length; i++) {
+//            System.out.println(authService.getUsers()[i]);
+//        }
+        //#######################HOMEWORK##########################################
 
 
 //        String userName = "Jony";
@@ -92,6 +95,20 @@ public class Main {
 //        arr.setValue(1, userName);
 //        System.out.println(arr.getValue(1));
 
+//        AuthService authService = new AuthService();
+//        User user1 = new User(1, "Igor", "123", new Date(), 'M', "e@example.com" );
+//        authService.signUp(user1);
+//        System.out.println(user1);
+//        user1.setUsername("ION");
+//        System.out.println(user1);
+
+
+AuthService authService = new AuthService();
+    IndentificationService indentificationService = new IndentificationService();
+
+    User u1 = new User(indentificationService.getID(), "Marcel","123",new Date(),'m', "Marcel@gmail.com");
+    String hash = authService.encryptUserPassword(u1);
+        System.out.println(hash);
 
     }
 }

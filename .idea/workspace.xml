@@ -6,9 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="08b0f1db-150e-49b1-9e30-c2d36cde6bbe" name="Changes" comment="added new files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ahoo-chat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ahoo-chat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/student/examples/chat/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/examples/chat/services/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stundent/examples/chat/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/providers/IndetificationProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/tests/IndetificationProviderTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,23 +47,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.IndetificationProviderTest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/eugeniup/IdeaProjects/ahoo-chat/src/Main.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.IndetificationProviderTest.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.MainTest.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/eugeniup/IdeaProjects/ahoo-chat/lib",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/eugeniup/IdeaProjects/ahoo-chat/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="IndetificationProviderTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="stundent.examples.chat.tests.IndetificationProviderTest" />
@@ -80,9 +91,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <module name="ahoo-chat" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.MainTest" />
         <item itemvalue="Application.IndetificationProviderTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.IndetificationProviderTest" />
@@ -116,7 +135,10 @@
       <workItem from="1715922603618" duration="19133000" />
       <workItem from="1716126053638" duration="16170000" />
       <workItem from="1716181435470" duration="5121000" />
-      <workItem from="1716316007283" duration="2172000" />
+      <workItem from="1716316007283" duration="18605000" />
+      <workItem from="1716442612124" duration="6056000" />
+      <workItem from="1716488863507" duration="25000" />
+      <workItem from="1716490049679" duration="18685000" />
     </task>
     <task id="LOCAL-00001" summary="added new files">
       <option name="closed" value="true" />
@@ -142,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716182142576</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added new files">
+      <option name="closed" value="true" />
+      <created>1716358001972</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716358001972</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
