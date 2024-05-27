@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="08b0f1db-150e-49b1-9e30-c2d36cde6bbe" name="Changes" comment="added new files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ahoo-chat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ahoo-chat.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/student/examples/chat/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/examples/chat/services/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stundent/examples/chat/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/providers/IndetificationProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/tests/IndetificationProviderTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Array-exception" />
+        <entry key="$PROJECT_DIR$" value="short-example" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -51,22 +45,16 @@
   "keyToString": {
     "Application.IndetificationProviderTest.executor": "Run",
     "Application.Main.executor": "Run",
-    "Application.MainTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/eugeniup/IdeaProjects/ahoo-chat/lib",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/eugeniup/IdeaProjects/ahoo-chat/src/Main.java",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -100,8 +88,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.MainTest" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.IndetificationProviderTest" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.IndetificationProviderTest" />
@@ -135,10 +123,7 @@
       <workItem from="1715922603618" duration="19133000" />
       <workItem from="1716126053638" duration="16170000" />
       <workItem from="1716181435470" duration="5121000" />
-      <workItem from="1716316007283" duration="18605000" />
-      <workItem from="1716442612124" duration="6056000" />
-      <workItem from="1716488863507" duration="25000" />
-      <workItem from="1716490049679" duration="18685000" />
+      <workItem from="1716316007283" duration="2172000" />
     </task>
     <task id="LOCAL-00001" summary="added new files">
       <option name="closed" value="true" />
@@ -164,15 +149,7 @@
       <option name="project" value="LOCAL" />
       <updated>1716182142576</updated>
     </task>
-    <task id="LOCAL-00004" summary="added new files">
-      <option name="closed" value="true" />
-      <created>1716358001972</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1716358001972</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

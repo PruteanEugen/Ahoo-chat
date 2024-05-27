@@ -108,19 +108,20 @@ public class AuthService {
 
     //#########SECURITY##################
     public String encryptUserPassword(User user) {
-        String hexPassword = "";
+        StringBuilder hexPassword = new StringBuilder();
         try {
             // Hash the password using SHA-256
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] hashedPassword = digest.digest(user.getPassword().getBytes("UTF-8"));
-            for (byte i : hashedPassword){
-                hexPassword += String.format("%02X",i);
-            }
 
+            for (byte i : hashedPassword){
+                hexPassword.append(String.format("%02X",i));
+            }
+        return hexPassword.toString();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return hexPassword;
+        return hexPassword.toString();
 
 
     }
