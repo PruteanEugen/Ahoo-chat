@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="08b0f1db-150e-49b1-9e30-c2d36cde6bbe" name="Changes" comment="added new files">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_05_2024_08_30__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_05_2024_08_30__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/examples/chat/services/AuthService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/examples/chat/services/MessagingService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/examples/chat/validation/Validator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Entity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/User.java" beforeDir="false" />
-    </list>
+    <list default="true" id="08b0f1db-150e-49b1-9e30-c2d36cde6bbe" name="Changes" comment="First Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +25,12 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/PruteanEugen/Ahoo-chat.git",
+    "accountId": "d356b624-321c-4ae2-8862-a9b306425a0f"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -137,7 +133,7 @@
       <workItem from="1716181435470" duration="5121000" />
       <workItem from="1716316007283" duration="2172000" />
       <workItem from="1716789028309" duration="4960000" />
-      <workItem from="1717128836497" duration="3789000" />
+      <workItem from="1717128836497" duration="4152000" />
     </task>
     <task id="LOCAL-00001" summary="added new files">
       <option name="closed" value="true" />
@@ -163,7 +159,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716182142576</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1717136096146</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1717136096146</updated>
+    </task>
+    <task id="LOCAL-00005" summary="First Commit">
+      <option name="closed" value="true" />
+      <created>1717136245916</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1717136245916</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +183,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added new files" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new files" />
+    <MESSAGE value="First Commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="First Commit" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
