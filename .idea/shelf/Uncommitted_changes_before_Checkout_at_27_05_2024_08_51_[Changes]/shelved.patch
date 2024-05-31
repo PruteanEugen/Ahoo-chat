@@ -1,0 +1,304 @@
+Index: src/student/examples/chat/services/AuthService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package student.examples.chat.services;\r\n\r\nimport student.examples.chat.exceptions.UserRegistrationFailedException;\r\nimport stundent.examples.chat.entities.User;\r\n\r\npublic class AuthService {\r\n    final int MAX_USERS = 10_000;\r\n    private int size = 0;\r\n    private User [] users;// class load atunci se executa acest rand;\r\n//#################OOP################################\r\n    public User[] getUsers() {\r\n        return users;\r\n    }\r\n\r\n    public void setUsers(User[] users) {\r\n        this.users = users;\r\n    }\r\n\r\n    public AuthService() {\r\n        users = new User[5]; //inizializam un array cu 5 celule\r\n    }\r\n    //##############SERVICE###########################\r\n     public void signUp(User user) throws UserRegistrationFailedException {\r\n        if(users == null){\r\n            users = new User[1];\r\n            size++;\r\n            users[size-1] = user;\r\n        }else {\r\n            User [] newUsers = new User[++size]; // incremeanteaza size si apoi adauga si celula noua\r\n            for (int i = 0; i < size-1; i++) {\r\n                newUsers[i] = users[i];\r\n            }\r\n                newUsers[size-1] = user;\r\n                users = newUsers;\r\n            }\r\n\r\n\r\n//         int i;\r\n//         try {\r\n//            // 1. search for next avaibalble\r\n//            for (i = 0; i < users.length; i++) {\r\n//                if (users[i]==null) break;\r\n//            }\r\n//             // 2. insert the user\r\n//             users[i] = user;\r\n//         }catch (ArrayIndexOutOfBoundsException e){\r\n//            // e.printStackTrace();\r\n//             throw new UserRegistrationFailedException(\"User list full\");\r\n//         }\r\n     }\r\n    public void signIn() {}\r\n    public void signOut() {}\r\n    public void dropOut() {}\r\n\r\n    public void dropOut(User user) {\r\n        // 1. Search\r\n        int i = searchUser(user);\r\n        if (i < 0) {\r\n            System.out.println(\"User\" + user + \" not found\");\r\n            return;\r\n            }\r\n            // 2. Delete\r\n            deleteUser(i);\r\n            // 3. Shift left\r\n            shiftUsersLeft(i);\r\n        }\r\n\r\n    //#################HELPERS##############################\r\n    public int searchUser(User user) {\r\n        for (int i = 0; i < users.length; i++) {\r\n            if (users[i] == null){\r\n                return -1;\r\n            }\r\n            if (users[i].getUsername().equals(user.getUsername())){\r\n            return i;\r\n        }\r\n      }\r\n        return -1; //Not found\r\n    }\r\n    public void deleteUser(int i) {\r\n        users[i] = null;\r\n    }\r\n\r\n    public void shiftUsersLeft(int i) {\r\n        for (int j =i+1; j < users.length; j++) {\r\n            users[j-1] = users[j];\r\n        }\r\n        users[users.length-1] = null;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/student/examples/chat/services/AuthService.java b/src/student/examples/chat/services/AuthService.java
+--- a/src/student/examples/chat/services/AuthService.java	(revision c3a0f16381594ef9fd4337d98ec75293493c81ae)
++++ b/src/student/examples/chat/services/AuthService.java	(date 1716789000911)
+@@ -3,11 +3,14 @@
+ import student.examples.chat.exceptions.UserRegistrationFailedException;
+ import stundent.examples.chat.entities.User;
+ 
++import java.security.MessageDigest;
++
+ public class AuthService {
+     final int MAX_USERS = 10_000;
+     private int size = 0;
+-    private User [] users;// class load atunci se executa acest rand;
+-//#################OOP################################
++    private User[] users;// class load atunci se executa acest rand;
++
++    //#################OOP################################
+     public User[] getUsers() {
+         return users;
+     }
+@@ -19,20 +22,21 @@
+     public AuthService() {
+         users = new User[5]; //inizializam un array cu 5 celule
+     }
++
+     //##############SERVICE###########################
+-     public void signUp(User user) throws UserRegistrationFailedException {
+-        if(users == null){
++    public void signUp(User user) throws UserRegistrationFailedException {
++        if (users == null) {
+             users = new User[1];
+             size++;
+-            users[size-1] = user;
+-        }else {
+-            User [] newUsers = new User[++size]; // incremeanteaza size si apoi adauga si celula noua
+-            for (int i = 0; i < size-1; i++) {
++            users[size - 1] = user;
++        } else {
++            User[] newUsers = new User[++size]; // incremeanteaza size si apoi adauga si celula noua
++            for (int i = 0; i < size - 1; i++) {
+                 newUsers[i] = users[i];
+             }
+-                newUsers[size-1] = user;
+-                users = newUsers;
+-            }
++            newUsers[size - 1] = user;
++            users = newUsers;
++        }
+ 
+ 
+ //         int i;
+@@ -47,10 +51,16 @@
+ //            // e.printStackTrace();
+ //             throw new UserRegistrationFailedException("User list full");
+ //         }
+-     }
+-    public void signIn() {}
+-    public void signOut() {}
+-    public void dropOut() {}
++    }
++
++    public void signIn() {
++    }
++
++    public void signOut() {
++    }
++
++    public void dropOut() {
++    }
+ 
+     public void dropOut(User user) {
+         // 1. Search
+@@ -58,33 +68,50 @@
+         if (i < 0) {
+             System.out.println("User" + user + " not found");
+             return;
+-            }
+-            // 2. Delete
+-            deleteUser(i);
+-            // 3. Shift left
+-            shiftUsersLeft(i);
+-        }
++        }
++        // 2. Delete
++        deleteUser(i);
++        // 3. Shift left
++        shiftUsersLeft(i);
++    }
+ 
+     //#################HELPERS##############################
+     public int searchUser(User user) {
+         for (int i = 0; i < users.length; i++) {
+-            if (users[i] == null){
++            if (users[i] == null) {
+                 return -1;
+             }
+-            if (users[i].getUsername().equals(user.getUsername())){
+-            return i;
+-        }
+-      }
++            if (users[i].getUsername().equals(user.getUsername())) {
++                return i;
++            }
++        }
+         return -1; //Not found
+     }
++
+     public void deleteUser(int i) {
+         users[i] = null;
+     }
+ 
+     public void shiftUsersLeft(int i) {
+-        for (int j =i+1; j < users.length; j++) {
+-            users[j-1] = users[j];
++        for (int j = i + 1; j < users.length; j++) {
++            users[j - 1] = users[j];
+         }
+-        users[users.length-1] = null;
++        users[users.length - 1] = null;
+     }
+-}
++
++    public String encryptUserPassword(User user) {
++        StringBuilder hexPassword = new StringBuilder();
++
++        byte[] hashedPassword = new byte[0];
++        try {
++            MessageDigest messageDigest = MessageDigest.getInstance("SHA-256");
++            hashedPassword = messageDigest.digest(user.getPassword().getBytes("UTF-8"));
++        } catch (Exception e) {
++            e.printStackTrace();
++        }
++        hexPassword.append(String.format("%02X", i));
++        for (byte i : hashedPassword) {
++        }
++        hexPassword.append(String.format("%02X", i));
++    }
++}
+\ No newline at end of file
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import student.examples.chat.services.AuthService;\r\nimport student.examples.chat.services.MessagingService;\r\nimport stundent.examples.chat.entities.Message;\r\nimport stundent.examples.chat.entities.User;\r\n\r\nimport java.util.Date;\r\n\r\n//TIP To <b>Run</b> code, press <shortcut actionId=\"Run\"/> or\r\n// click the <icon src=\"AllIcons.Actions.Execute\"/> icon in the gutter.\r\npublic class Main {\r\n    public static void main(String[] args) throws Exception{\r\n//        Entity user1 = new User(12, \"Ion\",\"1233\",new Date(),'m', \"ion@gmail.com\");\r\n//        System.out.println(((Entity)user1).toString());\r\n//\r\n//        Message msg = new Message(45, \"Hello World\");\r\n//        System.out.println(msg.getId());\r\n//\r\n//        Validator validator = new Validator();\r\n//        validator.isString(\"abc\");\r\n//        validator.isString(new User());\r\n//\r\n//        validator.isStrongPassword(\"Trunk123!\");\r\n//        User [] blackListUsers = {null,null,null};\r\n//        blackListUsers [1] = new User(11, \"BlackUser\",\"1233\",new Date(),'m', \"ion@gmail.com\");\r\n//\r\n//\r\n//\r\n//\r\n//        User user1 = new User(12, \"Ion\",\"1233\",new Date(),'m', \"ion@gmail.com\");\r\n//        authService.signUp(user1);\r\n//        User user2 = user1;\r\n//\r\n//        authService.setUsers(blackListUsers);\r\n//\r\n//        user2.setUsername(\"User2\");\r\n//        authService.getUsers()[1].setUsername(\"Marry\");\r\n////        authService.getUsers()[1]= null;\r\n//\r\n//        //Cache for\r\n//        User [] users = authService.getUsers();\r\n//        System.out.println(users);\r\n//        for(int i =0; i< users.length; i++ ){\r\n//            System.out.println(authService.getUsers()[i]);\r\n\r\n        //  }\r\n//            MessagingService messagingService = new MessagingService(3);\r\n//\r\n//        messagingService.send(new Message(1, \"Hello Bob\", new Date()));\r\n//        messagingService.send(new Message(2, \"Hello Eveline\", new Date()));\r\n//        messagingService.send(new Message(3, \"Hello everyone\", new Date()));\r\n//     //  messagingService.send(new Message(4, \"Hello everyone\", new Date()));\r\n//\r\n//        System.out.println(\"\\n All messages:\");\r\n//        messagingService.printMessages();\r\n//\r\n\r\n\r\n        AuthService authService = new AuthService();\r\n        int userCount=1;\r\n        while (userCount < 4){\r\n            User u1 = new User(11, \"Marcel\"+userCount,\"2222\",new Date(),'m', \"Marcel@gmail.com\");\r\n            authService.signUp(u1);\r\n            userCount++;\r\n\r\n        }\r\n        User u5 = new User(12, \"Marcel\",\"2222\",new Date(),'m', \"Marcel@gmail.com\");\r\n        System.out.println(authService.searchUser(u5));\r\n        System.out.println(\"Search the user\");\r\n        for (int i = 0; i < authService.getUsers().length; i++) {\r\n            System.out.println(authService.getUsers()[i]);\r\n        }\r\n        authService.deleteUser(3);\r\n        System.out.println(\"Delete user\");\r\n        for (int i = 0; i < authService.getUsers().length; i++) {\r\n            System.out.println(authService.getUsers()[i]);\r\n        }\r\n        authService.shiftUsersLeft(3);\r\n        System.out.println(\"Users shift left\");\r\n        for (int i = 0; i < authService.getUsers().length; i++) {\r\n            System.out.println(authService.getUsers()[i]);\r\n        }\r\n        System.out.println(\"Delete with drpOut Marcel\");\r\n        authService.dropOut(new User(5, \"Marcel5\", \"2222\", new Date(), 'm', \"Marcel@e.h\"));\r\n        for (int i = 0; i < authService.getUsers().length; i++) {\r\n            System.out.println(authService.getUsers()[i]);\r\n        }\r\n\r\n\r\n//        String userName = \"Jony\";\r\n//        //arr[0] = \"Test\"\r\n//        Array arr = new Array();\r\n//        arr.setValue(1, userName);\r\n//        System.out.println(arr.getValue(1));\r\n\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision c3a0f16381594ef9fd4337d98ec75293493c81ae)
++++ b/src/Main.java	(date 1716788735414)
+@@ -1,4 +1,5 @@
+ import student.examples.chat.services.AuthService;
++import student.examples.chat.services.IndentificationService;
+ import student.examples.chat.services.MessagingService;
+ import stundent.examples.chat.entities.Message;
+ import stundent.examples.chat.entities.User;
+@@ -9,89 +10,13 @@
+ // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+ public class Main {
+     public static void main(String[] args) throws Exception{
+-//        Entity user1 = new User(12, "Ion","1233",new Date(),'m', "ion@gmail.com");
+-//        System.out.println(((Entity)user1).toString());
+-//
+-//        Message msg = new Message(45, "Hello World");
+-//        System.out.println(msg.getId());
+-//
+-//        Validator validator = new Validator();
+-//        validator.isString("abc");
+-//        validator.isString(new User());
+-//
+-//        validator.isStrongPassword("Trunk123!");
+-//        User [] blackListUsers = {null,null,null};
+-//        blackListUsers [1] = new User(11, "BlackUser","1233",new Date(),'m', "ion@gmail.com");
+-//
+-//
+-//
+-//
+-//        User user1 = new User(12, "Ion","1233",new Date(),'m', "ion@gmail.com");
+-//        authService.signUp(user1);
+-//        User user2 = user1;
+-//
+-//        authService.setUsers(blackListUsers);
+-//
+-//        user2.setUsername("User2");
+-//        authService.getUsers()[1].setUsername("Marry");
+-////        authService.getUsers()[1]= null;
+-//
+-//        //Cache for
+-//        User [] users = authService.getUsers();
+-//        System.out.println(users);
+-//        for(int i =0; i< users.length; i++ ){
+-//            System.out.println(authService.getUsers()[i]);
+-
+-        //  }
+-//            MessagingService messagingService = new MessagingService(3);
+-//
+-//        messagingService.send(new Message(1, "Hello Bob", new Date()));
+-//        messagingService.send(new Message(2, "Hello Eveline", new Date()));
+-//        messagingService.send(new Message(3, "Hello everyone", new Date()));
+-//     //  messagingService.send(new Message(4, "Hello everyone", new Date()));
+-//
+-//        System.out.println("\n All messages:");
+-//        messagingService.printMessages();
+-//
+-
+ 
+-        AuthService authService = new AuthService();
+-        int userCount=1;
+-        while (userCount < 4){
+-            User u1 = new User(11, "Marcel"+userCount,"2222",new Date(),'m', "Marcel@gmail.com");
+-            authService.signUp(u1);
+-            userCount++;
+-
+-        }
+-        User u5 = new User(12, "Marcel","2222",new Date(),'m', "Marcel@gmail.com");
+-        System.out.println(authService.searchUser(u5));
+-        System.out.println("Search the user");
+-        for (int i = 0; i < authService.getUsers().length; i++) {
+-            System.out.println(authService.getUsers()[i]);
+-        }
+-        authService.deleteUser(3);
+-        System.out.println("Delete user");
+-        for (int i = 0; i < authService.getUsers().length; i++) {
+-            System.out.println(authService.getUsers()[i]);
+-        }
+-        authService.shiftUsersLeft(3);
+-        System.out.println("Users shift left");
+-        for (int i = 0; i < authService.getUsers().length; i++) {
+-            System.out.println(authService.getUsers()[i]);
+-        }
+-        System.out.println("Delete with drpOut Marcel");
+-        authService.dropOut(new User(5, "Marcel5", "2222", new Date(), 'm', "Marcel@e.h"));
+-        for (int i = 0; i < authService.getUsers().length; i++) {
+-            System.out.println(authService.getUsers()[i]);
+-        }
++AuthService authService = new AuthService();
++    IndentificationService indentificationService = new IndentificationService();
+ 
+-
+-//        String userName = "Jony";
+-//        //arr[0] = "Test"
+-//        Array arr = new Array();
+-//        arr.setValue(1, userName);
+-//        System.out.println(arr.getValue(1));
+-
++    User u1 = new User(indentificationService.getID(), "Marcel","123",new Date(),'m', "Marcel@gmail.com");
++    String hash = authService.encryptUserPassword(u1);
++        System.out.println(hash);
+ 
+     }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"08b0f1db-150e-49b1-9e30-c2d36cde6bbe\" name=\"Changes\" comment=\"added new files\" />\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 0\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2flRcTFagpRmCVmrMzprZipxVwN\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.IndetificationProviderTest.executor\": \"Run\",\r\n    \"Application.Main.executor\": \"Run\",\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"short-example\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"onboarding.tips.debug.path\": \"C:/Users/eugeniup/IdeaProjects/ahoo-chat/src/Main.java\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RunManager\" selected=\"Application.Main\">\r\n    <configuration name=\"IndetificationProviderTest\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"stundent.examples.chat.tests.IndetificationProviderTest\" />\r\n      <module name=\"ahoo-chat\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"stundent.examples.chat.tests.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Main\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"Main\" />\r\n      <module name=\"ahoo-chat\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.IndetificationProviderTest\" />\r\n        <item itemvalue=\"Application.Main\" />\r\n        <item itemvalue=\"Application.IndetificationProviderTest\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150\" />\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"08b0f1db-150e-49b1-9e30-c2d36cde6bbe\" name=\"Changes\" comment=\"\" />\r\n      <created>1714373760208</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1714373760208</updated>\r\n      <workItem from=\"1714373761272\" duration=\"5489000\" />\r\n      <workItem from=\"1714732351178\" duration=\"14362000\" />\r\n      <workItem from=\"1715097759800\" duration=\"20000\" />\r\n      <workItem from=\"1715099152119\" duration=\"361000\" />\r\n      <workItem from=\"1715406447271\" duration=\"23000\" />\r\n      <workItem from=\"1715702482981\" duration=\"742000\" />\r\n      <workItem from=\"1715741988449\" duration=\"3560000\" />\r\n      <workItem from=\"1715759709606\" duration=\"4365000\" />\r\n      <workItem from=\"1715922603618\" duration=\"19133000\" />\r\n      <workItem from=\"1716126053638\" duration=\"16170000\" />\r\n      <workItem from=\"1716181435470\" duration=\"5121000\" />\r\n      <workItem from=\"1716316007283\" duration=\"2172000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"added new files\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1716181955758</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1716181955758</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"added new files\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1716182005833</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1716182005833</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"added new files\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1716182142576</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1716182142576</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"4\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"added new files\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"added new files\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <watches-manager>\r\n      <configuration name=\"Application\">\r\n        <watch expression=\"users[0]\" language=\"JAVA\" />\r\n        <watch expression=\"users[1]\" language=\"JAVA\" />\r\n        <watch expression=\"users[2]\" language=\"JAVA\" />\r\n      </configuration>\r\n    </watches-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision c3a0f16381594ef9fd4337d98ec75293493c81ae)
++++ b/.idea/workspace.xml	(date 1716789001238)
+@@ -4,7 +4,13 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="08b0f1db-150e-49b1-9e30-c2d36cde6bbe" name="Changes" comment="added new files" />
++    <list default="true" id="08b0f1db-150e-49b1-9e30-c2d36cde6bbe" name="Changes" comment="added new files">
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_05_2024_10_44__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_05_2024_10_44__Changes_.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_05_2024_10_44__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_20_05_2024_10_44__Changes_1.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/student/examples/chat/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/examples/chat/services/AuthService.java" afterDir="false" />
++    </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+@@ -70,6 +76,13 @@
+     </configuration>
+     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="Main" />
++      <module name="ahoo-chat" />
++      <method v="2">
++        <option name="Make" enabled="true" />
++      </method>
++    </configuration>
++    <configuration name="MainTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="MainTest" />
+       <module name="ahoo-chat" />
+       <method v="2">
+         <option name="Make" enabled="true" />
+@@ -79,6 +92,7 @@
+       <list>
+         <item itemvalue="Application.Main" />
+         <item itemvalue="Application.IndetificationProviderTest" />
++        <item itemvalue="Application.MainTest" />
+         <item itemvalue="Application.Main" />
+         <item itemvalue="Application.IndetificationProviderTest" />
+       </list>
