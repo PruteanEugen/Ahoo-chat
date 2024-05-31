@@ -63,5 +63,3 @@ public class User extends Entity {
                 '}' + "\n\n";
     }
 }
-class NIcu{}
-class Vasile{}
