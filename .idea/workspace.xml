@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08b0f1db-150e-49b1-9e30-c2d36cde6bbe" name="Changes" comment="added new files">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_05_2024_08_30__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_27_05_2024_08_30__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/student/examples/chat/services/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/student/examples/chat/services/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/student/examples/chat/services/AuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/student/examples/chat/services/MessagingService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/student/examples/chat/validation/Validator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Entity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stundent/examples/chat/entities/User.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,23 +47,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.IndetificationProviderTest.executor": "Run",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/eugeniup/IdeaProjects/ahoo-chat/src/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.IndetificationProviderTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/eugeniup/IdeaProjects/ahoo-chat/src/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\eugeniup\IdeaProjects\ahoo-chat\src" />
+      <recent name="C:\Users\eugeniup\IdeaProjects\ahoo-chat\src\student\examples\chat\test" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="IndetificationProviderTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="stundent.examples.chat.tests.IndetificationProviderTest" />
@@ -124,6 +136,8 @@
       <workItem from="1716126053638" duration="16170000" />
       <workItem from="1716181435470" duration="5121000" />
       <workItem from="1716316007283" duration="2172000" />
+      <workItem from="1716789028309" duration="4960000" />
+      <workItem from="1717128836497" duration="3789000" />
     </task>
     <task id="LOCAL-00001" summary="added new files">
       <option name="closed" value="true" />
