@@ -64,3 +64,4 @@ public class User extends Entity {
     }
 }
 class NIcu{}
+class Vasile{}
